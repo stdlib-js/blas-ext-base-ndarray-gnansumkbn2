@@ -74,10 +74,9 @@ var gnansumkbn2 = require( '@stdlib/blas-ext-base-ndarray-gnansumkbn2' );
 Computes the sum of a one-dimensional ndarray, ignoring `NaN` values and using a second-order iterative Kahan–Babuška algorithm.
 
 ```javascript
-var ndarray = require( '@stdlib/ndarray-base-ctor' );
+var vector = require( '@stdlib/ndarray-vector-ctor' );
 
-var xbuf = [ 1.0, -2.0, NaN, 2.0 ];
-var x = new ndarray( 'generic', xbuf, [ 4 ], [ 1 ], 0, 'row-major' );
+var x = vector( [ 1.0, -2.0, NaN, 2.0 ], 'generic' );
 
 var v = gnansumkbn2( [ x ] );
 // returns 1.0
@@ -108,15 +107,15 @@ The function has the following parameters:
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-var discreteUniform = require( '@stdlib/random-array-discrete-uniform' );
-var ndarray = require( '@stdlib/ndarray-base-ctor' );
+var discreteUniform = require( '@stdlib/random-discrete-uniform' );
 var ndarray2array = require( '@stdlib/ndarray-to-array' );
 var gnansumkbn2 = require( '@stdlib/blas-ext-base-ndarray-gnansumkbn2' );
 
-var xbuf = discreteUniform( 10, -50, 50, {
+var opts = {
     'dtype': 'generic'
-});
-var x = new ndarray( 'generic', xbuf, [ xbuf.length ], [ 1 ], 0, 'row-major' );
+};
+
+var x = discreteUniform( [ 10 ], -50, 50, opts );
 console.log( ndarray2array( x ) );
 
 var v = gnansumkbn2( [ x ] );
@@ -164,6 +163,11 @@ For more information on the project, filing bug reports and feature requests, an
 
 ---
 
+## License
+
+See [LICENSE][stdlib-license].
+
+
 ## Copyright
 
 Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
@@ -209,6 +213,8 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 [esm-url]: https://github.com/stdlib-js/blas-ext-base-ndarray-gnansumkbn2/tree/esm
 [esm-readme]: https://github.com/stdlib-js/blas-ext-base-ndarray-gnansumkbn2/blob/esm/README.md
 [branches-url]: https://github.com/stdlib-js/blas-ext-base-ndarray-gnansumkbn2/blob/main/branches.md
+
+[stdlib-license]: https://raw.githubusercontent.com/stdlib-js/blas-ext-base-ndarray-gnansumkbn2/main/LICENSE
 
 [@klein:2005a]: https://doi.org/10.1007/s00607-005-0139-x
 
