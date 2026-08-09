@@ -1,27 +1,5 @@
+"use strict";var u=function(e,r){return function(){try{return r||e((r={exports:{}}).exports,r),r.exports}catch(a){throw (r=0, a)}};};var i=u(function(c,t){
+var n=require('@stdlib/ndarray-base-numel-dimension/dist'),s=require('@stdlib/ndarray-base-stride/dist'),v=require('@stdlib/ndarray-base-offset/dist'),q=require('@stdlib/ndarray-base-data-buffer/dist'),d=require('@stdlib/blas-ext-base-gnansumkbn2/dist').ndarray;function g(e){var r=e[0];return d(n(r,0),q(r),s(r,0),v(r))}t.exports=g
+});var m=i();module.exports=m;
 /** @license Apache-2.0 */
-
-'use strict';
-
-/**
-* Compute the sum of a one-dimensional ndarray, ignoring `NaN` values and using a second-order iterative Kahan–Babuška algorithm.
-*
-* @module @stdlib/blas-ext-base-ndarray-gnansumkbn2
-*
-* @example
-* var vector = require( '@stdlib/ndarray-vector-ctor' );
-* var gnansumkbn2 = require( '@stdlib/blas-ext-base-ndarray-gnansumkbn2' );
-*
-* var x = vector( [ 1.0, -2.0, NaN, 2.0 ], 'generic' );
-*
-* var v = gnansumkbn2( [ x ] );
-* // returns 1.0
-*/
-
-// MODULES //
-
-var main = require( './main.js' );
-
-
-// EXPORTS //
-
-module.exports = main;
+//# sourceMappingURL=index.js.map
